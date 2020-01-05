@@ -1,11 +1,10 @@
-import requests
 import socket
 import time
 from notification import show_notification
 from ErrorType import ErrorType
 from logger import logger
 
-from PyQt5.QtCore import QObject, pyqtSlot
+from PyQt5.QtCore import QObject
 
 class Internet(QObject):
     def __init__(self):
