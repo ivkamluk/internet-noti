@@ -16,5 +16,6 @@ if __name__ == '__main__':
     noti_app = MainActivity()
     noti_app.create_menu()
 
-    app.setWindowIcon(app_icon) #
+    app.setWindowIcon(app_icon)
+    app.setQuitOnLastWindowClosed(False)
     sys.exit(app.exec())

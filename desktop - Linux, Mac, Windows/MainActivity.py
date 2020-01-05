@@ -1,6 +1,4 @@
 import threading
-import concurrent.futures
-import time
 from logger import logger
 from Internet import Internet
 import noti_constants
@@ -50,7 +48,7 @@ class MainActivity(QWidget):
         # -----
 
     def tray_action_start(self):
-        self.internet.enable_monitoring(False)
+        self.internet.disable_monitoring(False)
         self.noti_thread = threading.Thread(target = self.internet.check_internet_connection, daemon = True)
         # -----
         logger.debug('New thread was CREATED')
@@ -65,7 +63,7 @@ class MainActivity(QWidget):
         # -----
 
     def tray_action_stop(self):
-        self.internet.enable_monitoring(True)
+        self.internet.disable_monitoring(True)
         threading.Thread.join(self.noti_thread)
         # -----
         logger.debug('Created Thread was STOPPED')
