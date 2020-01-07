@@ -12,7 +12,7 @@ Notification::Notification(QString connection, QString website,
                            bool connection_status,
                            QWidget *parent) : QDialog(parent)
 {
-    setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
     setFixedWidth(260);
 
     frame_notification = new QFrame(this);
