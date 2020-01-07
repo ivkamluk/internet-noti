@@ -1,0 +1,37 @@
+QWidget
+{
+    background:#d6d6d6;
+}
+
+QLabel#label_name
+{
+    font-size:11px;
+    font-weight:bold;
+    color:black;
+}
+
+QFrame#frame_line
+{
+   color: #b3b3b3;
+}
+
+QLabel#label_connection_status_good
+{
+    font-size:13px;
+    font-weight:bold;
+    color: #008c2c;
+}
+
+QLabel#label_connection_status_bad
+{
+    font-size:12px;
+    font-weight:bold;
+    color:#f01818;
+}
+
+QLabel#label_website
+{
+    font-size:11px;
+    text-decoration:underline;
+
+}

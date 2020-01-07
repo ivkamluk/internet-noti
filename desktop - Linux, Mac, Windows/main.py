@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys # using for arguments to QApplication
 from MainActivity import MainActivity
 from PyQt5.QtWidgets import QApplication
