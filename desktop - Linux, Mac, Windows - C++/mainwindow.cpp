@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 
 #include <QDialog>
+#include <QCoreApplication>
 #include <QDebug>
 #include <string>
 
@@ -11,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     internet = new Internet(this);
     intrn_observer = new InternetObserver(this);
     menu = new QMenu(this);
+    noti_thread = std::thread();
 }
 
 void MainWindow::create_menu()
@@ -58,8 +60,11 @@ void MainWindow::tray_action_start()
 void MainWindow::tray_action_stop()
 {
     internet->disable_monitoring(true);
-    noti_thread.join();
-    qDebug() <<"Thread stopped";
+    if (noti_thread.joinable())
+    {
+        noti_thread.join();
+        qDebug() <<"Thread stopped";
+    }
 
     noti_action_start->setEnabled(true);
     noti_action_stop->setEnabled(false);
@@ -102,11 +107,12 @@ void MainWindow::tray_action_about()
 
 void MainWindow::tray_action_exit()
 {
-    if (noti_thread.joinable())
-        tray_action_stop();
-    exit(1);
+   QApplication::quit();
 }
 
 MainWindow::~MainWindow()
-{}   
+{
+    // stop all threds if app was closed with force
+    tray_action_stop();
+}
 
