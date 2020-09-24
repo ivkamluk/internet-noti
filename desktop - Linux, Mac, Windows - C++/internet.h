@@ -14,13 +14,14 @@ public:
     void disable_monitoring(bool stop_monitoring);
     bool get_by_socket_connection_website(std::string website_url);
     void check_internet_connection();
+    bool get_internet_connection_at_launch(std::string website_url);
 
 signals:
+    void internet_status_at_launch (bool status);
     void internet_status_changed(bool status, QString website);
 
 private:
     bool isInternet_monitor_stopped;
-    std::unordered_map<unsigned short, std::string> websites;
 };
 
 #endif // INTERNET_H

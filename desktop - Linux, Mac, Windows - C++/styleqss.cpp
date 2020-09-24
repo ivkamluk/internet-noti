@@ -1,4 +1,5 @@
 #include "styleqss.h"
+
 #include <QFile>
 #include <QTextStream>
 

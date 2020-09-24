@@ -2,7 +2,6 @@
 #define INTERNETOBSERVER_H
 
 #include <QWidget>
-#include <string>
 
 #include "connectiontype.h"
 #include "notification.h"

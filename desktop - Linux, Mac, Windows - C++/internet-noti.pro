@@ -16,8 +16,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    appconstants.cpp \
     connectiontype.cpp \
-    extendedabel.cpp \
+    extendedlabel.cpp \
     internet.cpp \
     internetobserver.cpp \
     main.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
     styleqss.cpp
 
 HEADERS += \
+    appconstants.h \
     connectiontype.h \
     extendedlabel.h \
     internet.h \

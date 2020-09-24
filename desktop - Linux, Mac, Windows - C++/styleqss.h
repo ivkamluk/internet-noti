@@ -1,5 +1,6 @@
 #ifndef STYLEQSS_H
 #define STYLEQSS_H
+
 #include <QString>
 
 /*

@@ -1,4 +1,6 @@
 #include "connectiontype.h"
+#include "appconstants.h"
+
 #include <QDebug>
 
 ConnectionType::ConnectionType(QObject *parent) : QObject(parent)
@@ -12,8 +14,6 @@ ConnectionType::ConnectionType(bool connection_status, QObject *parent)
 
 QString ConnectionType::connection_title()
 {
-    if (is_connection_enabled)
-        return tr("Connection established to");
-    else
-        return tr("Connection failed to");
+    return is_connection_enabled ?
+                tr(CONNECTION_ESTABLISHED) : tr(CONNECTION_FAILED);
 }
