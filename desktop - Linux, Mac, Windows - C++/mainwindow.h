@@ -31,17 +31,18 @@ public slots:
     void tray_action_stop();
     void tray_action_about();
     void tray_action_exit();
+   // void tray_status_changed();
 
 private:
     QDialog *dialog_about;
     Internet *internet;
     QVBoxLayout *vbox_about;
-    QLabel *description_text, *icons_url, *github_account;
+    QLabel *dialog_about_description, *icons_url, *github_url;
     QMenu *menu;
     QSystemTrayIcon *tray_icon;
     QAction *noti_action_start, *noti_action_stop, *noti_action_about,
     *noti_action_exit;
     std::thread noti_thread;
-    InternetObserver *intrn_observer;
+    InternetObserver *internet_observer;
 };
 #endif // MAINWINDOW_H

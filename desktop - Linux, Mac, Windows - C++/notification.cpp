@@ -1,12 +1,12 @@
 #include "notification.h"
+#include "styleqss.h"
+#include "appconstants.h"
 
 #include <QRect>
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QSysInfo>
 #include <QPixmap>
-
-#include "styleqss.h"
 
 Notification::Notification(QString connection, QString website,
                            bool connection_status,
@@ -25,10 +25,10 @@ Notification::Notification(QString connection, QString website,
 
     label_name = new QLabel(this);
     label_name->setObjectName("label_name");
-    label_name->setText("internet-noti");
+    label_name->setText(NOTIFICATION_TITLE);
 
     label_close = new ExtendedLabel(this);
-    label_close->setPixmap(QPixmap(":/images/icons/noti_notification_close.png"));
+    label_close->setPixmap(QPixmap(ICON_NOTIFICATION_CLOSE));
 
     hbox_name_close->addWidget(label_name);
     hbox_name_close->addWidget(label_close);
