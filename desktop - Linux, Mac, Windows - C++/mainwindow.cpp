@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 
 #include <QDialog>
-#include <QCoreApplication>
+#include <QApplication>
 #include <QDebug>
 #include <string>
 
@@ -18,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent)
 void MainWindow::create_menu()
 {
     tray_icon = new QSystemTrayIcon(this);
-    tray_icon->setIcon(QIcon(":/images/icons/noti_tray.png"));
 
     noti_action_start = new QAction(QIcon(":/images/icons/noti_start_enabled.png"),
                                     "Start", this);
@@ -55,6 +54,9 @@ void MainWindow::tray_action_start()
     noti_action_stop->setEnabled(true);
     noti_action_start->setIcon(QIcon(":/images/icons/noti_start_disabled.png"));
     noti_action_stop->setIcon(QIcon(":/images/icons/noti_stop_enabled.png"));
+
+    QApplication::setWindowIcon(QIcon(":/images/icons/noti_tray_connected.svg"));
+    tray_icon->setIcon(QIcon(":/images/icons/noti_tray_connected.svg"));
 }
 
 void MainWindow::tray_action_stop()
@@ -70,6 +72,9 @@ void MainWindow::tray_action_stop()
     noti_action_stop->setEnabled(false);
     noti_action_start->setIcon(QIcon(":/images/icons/noti_start_enabled.png"));
     noti_action_stop->setIcon(QIcon(":/images/icons/noti_stop_disabled.png"));
+
+    QApplication::setWindowIcon(QIcon(":/images/icons/noti_tray_disconnected.svg"));
+    tray_icon->setIcon(QIcon(":/images/icons/noti_tray_disconnected.svg"));
 }
 
 void MainWindow::tray_action_about()
@@ -89,7 +94,8 @@ void MainWindow::tray_action_about()
                                   " was established or not."));
 
         icons_url = new QLabel(this);
-        icons_url->setText(tr("All icons was used from <a href='https://icons8.ru'>Icons8</a>"));
+        icons_url->setText(tr("Icons was used from <a href='https://icons8.ru'>Icons8</a> "
+                              "and <a href='https://www.flaticon.com/authors/vectors-market'>Flaticon</a>"));
         icons_url->setOpenExternalLinks(true);
 
         github_account = new QLabel(this);
@@ -112,7 +118,7 @@ void MainWindow::tray_action_exit()
 
 MainWindow::~MainWindow()
 {
-    // stop all threds if app was closed with force
+    // stop all threads if app was closed with force
     tray_action_stop();
 }
 

@@ -8,7 +8,7 @@ Internet::Internet(QWidget *parent) : QWidget(parent)
 {
     isInternet_monitor_stopped = false;
     websites = {
-        { 0, "www.kamluk.wd.nubip.edu.ua"},
+        { 0, "www.bing.com"},
         { 1, "www.google.com"},
         { 2, "www.duckduckgo.com"}
     };

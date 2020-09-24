@@ -13,7 +13,6 @@ ConnectionType::ConnectionType(bool connection_status, QObject *parent)
 QString ConnectionType::connection_title()
 {
     if (is_connection_enabled)
-
         return tr("Connection established to");
     else
         return tr("Connection failed to");
