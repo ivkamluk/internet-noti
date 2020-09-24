@@ -4,9 +4,9 @@
         <file>icons/noti_start_enabled.png</file>
         <file>icons/noti_stop_disabled.png</file>
         <file>icons/noti_stop_enabled.png</file>
-        <file>icons/noti_tray.png</file>
-        <file>icons/noti.png</file>
         <file>icons/noti_notification_close.png</file>
+        <file>icons/noti_tray_connected.svg</file>
+        <file>icons/noti_tray_disconnected.svg</file>
     </qresource>
     <qresource prefix="/qss">
         <file>QSS/notification.qss</file>
