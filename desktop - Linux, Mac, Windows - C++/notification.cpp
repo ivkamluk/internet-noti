@@ -9,7 +9,7 @@
 #include <QPixmap>
 
 Notification::Notification(QString connection, QString website,
-                           bool connection_status,
+                           InternetStatus connection_status,
                            QWidget *parent) : QDialog(parent)
 {
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
@@ -41,7 +41,7 @@ Notification::Notification(QString connection, QString website,
 
     label_connection_status = new QLabel(this);
 
-    if (connection_status)
+    if (connection_status == INTERNET_CONNECTED)
          label_connection_status->setObjectName("label_connection_status_good");
     else
         label_connection_status->setObjectName("label_connection_status_bad");
