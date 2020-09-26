@@ -12,13 +12,14 @@
 #include <string>
 
 #include "extendedlabel.h"
+#include "appconstants.h"
 
 class Notification : public QDialog
 {
     Q_OBJECT
 public:
     explicit Notification(QString connection, QString website,
-                          bool connection_status,
+                          InternetStatus connection_status,
                           QWidget *parent = nullptr);
 
     void determine_screen_place();

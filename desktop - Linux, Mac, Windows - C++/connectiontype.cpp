@@ -1,12 +1,11 @@
 #include "connectiontype.h"
-#include "appconstants.h"
 
 #include <QDebug>
 
 ConnectionType::ConnectionType(QObject *parent) : QObject(parent)
 {}
 
-ConnectionType::ConnectionType(bool connection_status, QObject *parent)
+ConnectionType::ConnectionType(InternetStatus connection_status, QObject *parent)
     : QObject(parent)
 {
    is_connection_enabled = connection_status;
@@ -14,6 +13,10 @@ ConnectionType::ConnectionType(bool connection_status, QObject *parent)
 
 QString ConnectionType::connection_title()
 {
-    return is_connection_enabled ?
-                tr(CONNECTION_ESTABLISHED) : tr(CONNECTION_FAILED);
+   if (is_connection_enabled == INTERNET_CONNECTED)
+       return QObject::tr(qPrintable(CONNECTION_ESTABLISHED));
+   else
+       return QObject::tr(qPrintable(CONNECTION_FAILED));
+//    return is_connection_enabled ?
+//                QObject::tr(qPrintable(CONNECTION_ESTABLISHED)) : QObject::tr(qPrintable(CONNECTION_FAILED));
 }
