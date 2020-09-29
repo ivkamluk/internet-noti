@@ -17,6 +17,4 @@ QString ConnectionType::connection_title()
        return QObject::tr(qPrintable(CONNECTION_ESTABLISHED));
    else
        return QObject::tr(qPrintable(CONNECTION_FAILED));
-//    return is_connection_enabled ?
-//                QObject::tr(qPrintable(CONNECTION_ESTABLISHED)) : QObject::tr(qPrintable(CONNECTION_FAILED));
 }

@@ -6,6 +6,7 @@
 #include "connectiontype.h"
 #include "notification.h"
 #include "appconstants.h"
+#include "macnotification.h"
 
 class InternetObserver : public QWidget
 {
@@ -14,12 +15,12 @@ public:
     explicit InternetObserver(QWidget *parent = nullptr);
 
 public slots:
-    QString determine_internet_status(InternetStatus status);
     void show_internet_notification(InternetStatus status, QString website);
 
 private:
         ConnectionType *connectiontype;
-        Notification *notification;
+//        Notification *notification;
+        MacNotification *macnotification;
 };
 
 #endif // INTERNETOBSERVER_H

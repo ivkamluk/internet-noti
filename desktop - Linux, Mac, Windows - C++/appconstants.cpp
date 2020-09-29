@@ -21,6 +21,7 @@
                          "and <a href='https://www.flaticon.com/authors/vectors-market'>Flaticon</a>";
  QString GITHUB_URL = "Github: <a href='https://github.com/ivkamluk'>ivkamluk</a>";
  QString NOTIFICATION_TITLE = "internet-noti";
+ QString APPLICATION_NAME = "internet-noti";
 
 //icons
  QString ICON_START_ENABLED = ":/images/icons/noti_start_enabled.png";

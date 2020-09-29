@@ -25,6 +25,7 @@ extern QString DIALOG_ABOUT_DESCRIPTION;
 extern QString ICONS_URL;
 extern QString GITHUB_URL;
 extern QString NOTIFICATION_TITLE;
+extern QString APPLICATION_NAME;
 
 //icons
 extern QString ICON_START_ENABLED;

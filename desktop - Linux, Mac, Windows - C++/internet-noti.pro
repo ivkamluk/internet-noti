@@ -1,4 +1,4 @@
-QT       += core gui network
+QT       += widgets core macextras gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -31,10 +31,17 @@ HEADERS += \
     connectiontype.h \
     extendedlabel.h \
     internet.h \
+    macnotification.h \
     internetobserver.h \
     mainwindow.h \
     notification.h \
     styleqss.h
+
+macx: {
+    QMAKE_LFLAGS += -framework Cocoa
+    OBJECTIVE_SOURCES += macnotification.mm
+    QMAKE_TARGET_BUNDLE_PREFIX = test-project.internet-noti_v.1.1
+}
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -44,4 +51,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     files.qrc
 
-RC_ICONS = noti.icns
+ICON = noti.icns
