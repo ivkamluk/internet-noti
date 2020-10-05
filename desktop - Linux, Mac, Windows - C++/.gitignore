@@ -132,6 +132,7 @@ dmypy.json
 # C++ objects and libs
 *.slo
 *.lo
+
 *.o
 *.a
 *.la
@@ -183,7 +184,10 @@ compile_commands.json
 *creator.user*
 
 *_qmlcache.qrc
+.qmake.stash
 
 *.app/Contents
 
-*.DB_Store
+.DB_Store
+*.app
+Makefile
